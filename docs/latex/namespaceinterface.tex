@@ -1,0 +1,214 @@
+\hypertarget{namespaceinterface}{}\section{interface Namespace Reference}
+\label{namespaceinterface}\index{interface@{interface}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceinterface_a66f5ed4cd3345e5f1f4abe21259cf925}{go\+\_\+to} (x, y)
+\begin{DoxyCompactList}\small\item\em This function publish the desired position to \textquotesingle{}move\+\_\+base/goal\textquotesingle{} topic. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a77f849df9c7df3c30a5f806d8ed5803f}{random\+\_\+destination} ()
+\begin{DoxyCompactList}\small\item\em A random destination is chosen among the possible. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a1ba6fd083749b1aa01d230719ebffaf8}{ask\+\_\+user\+\_\+destination} ()
+\begin{DoxyCompactList}\small\item\em This function ask to the user the destination among a list of possible targets. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_adb690fa0fc4d5c66808407e62379cfba}{follow\+\_\+walls} ()
+\begin{DoxyCompactList}\small\item\em This function command the robot to follow the walls. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a106ba8bd4a2bb1c8c1b073afb74cdfdd}{stop} ()
+\begin{DoxyCompactList}\small\item\em This function command the robot to stop First it publish a 2D Twist equal to zero Then it sets the actual position as the next target. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a1b788c3588460b432a0ecf905def2092}{position\+Callback} (msg)
+\begin{DoxyCompactList}\small\item\em Every time the \textquotesingle{}/odom\textquotesingle{} publish the position this function put them in global variables. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_ac84656acec70183a4ef276f4a3343971}{main} ()
+\begin{DoxyCompactList}\small\item\em Let\textquotesingle{}s define the main function\+: initialization and infinite loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{namespaceinterface_a77dace02a869e1f2eab3089d30819e9e}{possible\+\_\+positions} = \mbox{[}(-\/4,-\/3),(-\/4,2),(-\/4,7),(5,-\/7),(5,-\/3),(5,1)\mbox{]}
+\begin{DoxyCompactList}\small\item\em The aim of this script is to get user commands. \end{DoxyCompactList}\item 
+\hyperlink{namespaceinterface_a72ec0b767bae8bc1bf6b2da98c8b9737}{srv\+\_\+wall\+\_\+follow} = None
+\item 
+\hyperlink{namespaceinterface_a295379ed3912c49d4fd9d286c7f0caee}{pub\+\_\+move\+\_\+base} = None
+\item 
+\hyperlink{namespaceinterface_a955722b54659175cc5ea2543c976d6a4}{pub\+\_\+twist} = None
+\item 
+\hyperlink{namespaceinterface_a2dc19bae4560767a9cff309d17ca0fc3}{client} = None
+\item 
+\hyperlink{namespaceinterface_a4fa46e1dde3c61a732b5383c93e411e1}{actual\+\_\+x} = None
+\item 
+\hyperlink{namespaceinterface_af27b0b163a429bf0725f6c471e3f1998}{actual\+\_\+y} = None
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceinterface_a1ba6fd083749b1aa01d230719ebffaf8}\label{namespaceinterface_a1ba6fd083749b1aa01d230719ebffaf8}} 
+\index{interface@{interface}!ask\+\_\+user\+\_\+destination@{ask\+\_\+user\+\_\+destination}}
+\index{ask\+\_\+user\+\_\+destination@{ask\+\_\+user\+\_\+destination}!interface@{interface}}
+\subsubsection{\texorpdfstring{ask\+\_\+user\+\_\+destination()}{ask\_user\_destination()}}
+{\footnotesize\ttfamily def interface.\+ask\+\_\+user\+\_\+destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function ask to the user the destination among a list of possible targets. 
+
+
+
+Definition at line 65 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_adb690fa0fc4d5c66808407e62379cfba}\label{namespaceinterface_adb690fa0fc4d5c66808407e62379cfba}} 
+\index{interface@{interface}!follow\+\_\+walls@{follow\+\_\+walls}}
+\index{follow\+\_\+walls@{follow\+\_\+walls}!interface@{interface}}
+\subsubsection{\texorpdfstring{follow\+\_\+walls()}{follow\_walls()}}
+{\footnotesize\ttfamily def interface.\+follow\+\_\+walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function command the robot to follow the walls. 
+
+
+
+Definition at line 80 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a66f5ed4cd3345e5f1f4abe21259cf925}\label{namespaceinterface_a66f5ed4cd3345e5f1f4abe21259cf925}} 
+\index{interface@{interface}!go\+\_\+to@{go\+\_\+to}}
+\index{go\+\_\+to@{go\+\_\+to}!interface@{interface}}
+\subsubsection{\texorpdfstring{go\+\_\+to()}{go\_to()}}
+{\footnotesize\ttfamily def interface.\+go\+\_\+to (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+This function publish the desired position to \textquotesingle{}move\+\_\+base/goal\textquotesingle{} topic. 
+
+
+
+Definition at line 40 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_ac84656acec70183a4ef276f4a3343971}\label{namespaceinterface_ac84656acec70183a4ef276f4a3343971}} 
+\index{interface@{interface}!main@{main}}
+\index{main@{main}!interface@{interface}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def interface.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Let\textquotesingle{}s define the main function\+: initialization and infinite loop. 
+
+
+
+Definition at line 117 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a1b788c3588460b432a0ecf905def2092}\label{namespaceinterface_a1b788c3588460b432a0ecf905def2092}} 
+\index{interface@{interface}!position\+Callback@{position\+Callback}}
+\index{position\+Callback@{position\+Callback}!interface@{interface}}
+\subsubsection{\texorpdfstring{position\+Callback()}{positionCallback()}}
+{\footnotesize\ttfamily def interface.\+position\+Callback (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Every time the \textquotesingle{}/odom\textquotesingle{} publish the position this function put them in global variables. 
+
+
+
+Definition at line 108 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a77f849df9c7df3c30a5f806d8ed5803f}\label{namespaceinterface_a77f849df9c7df3c30a5f806d8ed5803f}} 
+\index{interface@{interface}!random\+\_\+destination@{random\+\_\+destination}}
+\index{random\+\_\+destination@{random\+\_\+destination}!interface@{interface}}
+\subsubsection{\texorpdfstring{random\+\_\+destination()}{random\_destination()}}
+{\footnotesize\ttfamily def interface.\+random\+\_\+destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A random destination is chosen among the possible. 
+
+
+
+Definition at line 51 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a106ba8bd4a2bb1c8c1b073afb74cdfdd}\label{namespaceinterface_a106ba8bd4a2bb1c8c1b073afb74cdfdd}} 
+\index{interface@{interface}!stop@{stop}}
+\index{stop@{stop}!interface@{interface}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily def interface.\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function command the robot to stop First it publish a 2D Twist equal to zero Then it sets the actual position as the next target. 
+
+
+
+Definition at line 90 of file interface.\+py.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceinterface_a4fa46e1dde3c61a732b5383c93e411e1}\label{namespaceinterface_a4fa46e1dde3c61a732b5383c93e411e1}} 
+\index{interface@{interface}!actual\+\_\+x@{actual\+\_\+x}}
+\index{actual\+\_\+x@{actual\+\_\+x}!interface@{interface}}
+\subsubsection{\texorpdfstring{actual\+\_\+x}{actual\_x}}
+{\footnotesize\ttfamily interface.\+actual\+\_\+x = None}
+
+
+
+Definition at line 34 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_af27b0b163a429bf0725f6c471e3f1998}\label{namespaceinterface_af27b0b163a429bf0725f6c471e3f1998}} 
+\index{interface@{interface}!actual\+\_\+y@{actual\+\_\+y}}
+\index{actual\+\_\+y@{actual\+\_\+y}!interface@{interface}}
+\subsubsection{\texorpdfstring{actual\+\_\+y}{actual\_y}}
+{\footnotesize\ttfamily interface.\+actual\+\_\+y = None}
+
+
+
+Definition at line 35 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a2dc19bae4560767a9cff309d17ca0fc3}\label{namespaceinterface_a2dc19bae4560767a9cff309d17ca0fc3}} 
+\index{interface@{interface}!client@{client}}
+\index{client@{client}!interface@{interface}}
+\subsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily interface.\+client = None}
+
+
+
+Definition at line 33 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a77dace02a869e1f2eab3089d30819e9e}\label{namespaceinterface_a77dace02a869e1f2eab3089d30819e9e}} 
+\index{interface@{interface}!possible\+\_\+positions@{possible\+\_\+positions}}
+\index{possible\+\_\+positions@{possible\+\_\+positions}!interface@{interface}}
+\subsubsection{\texorpdfstring{possible\+\_\+positions}{possible\_positions}}
+{\footnotesize\ttfamily list interface.\+possible\+\_\+positions = \mbox{[}(-\/4,-\/3),(-\/4,2),(-\/4,7),(5,-\/7),(5,-\/3),(5,1)\mbox{]}}
+
+
+
+The aim of this script is to get user commands. 
+
+1)move randomly in the environment, by choosing 1 out of 6 possible target positions\+: \mbox{[}(-\/4,-\/3);(-\/4,2);(-\/4,7);(5,-\/7);(5,-\/3);(5,1)\mbox{]} 2) directly ask the user for the next target position (checking that the position is one of the possible six) and reach it 3) start following the external walls 4) stop in the last position 5) (optional) change the planning algorithm to dijkstra (move\+\_\+base) to the bug0 Global variables, like the positions 
+
+Definition at line 29 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a295379ed3912c49d4fd9d286c7f0caee}\label{namespaceinterface_a295379ed3912c49d4fd9d286c7f0caee}} 
+\index{interface@{interface}!pub\+\_\+move\+\_\+base@{pub\+\_\+move\+\_\+base}}
+\index{pub\+\_\+move\+\_\+base@{pub\+\_\+move\+\_\+base}!interface@{interface}}
+\subsubsection{\texorpdfstring{pub\+\_\+move\+\_\+base}{pub\_move\_base}}
+{\footnotesize\ttfamily interface.\+pub\+\_\+move\+\_\+base = None}
+
+
+
+Definition at line 31 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a955722b54659175cc5ea2543c976d6a4}\label{namespaceinterface_a955722b54659175cc5ea2543c976d6a4}} 
+\index{interface@{interface}!pub\+\_\+twist@{pub\+\_\+twist}}
+\index{pub\+\_\+twist@{pub\+\_\+twist}!interface@{interface}}
+\subsubsection{\texorpdfstring{pub\+\_\+twist}{pub\_twist}}
+{\footnotesize\ttfamily interface.\+pub\+\_\+twist = None}
+
+
+
+Definition at line 32 of file interface.\+py.
+
+\mbox{\Hypertarget{namespaceinterface_a72ec0b767bae8bc1bf6b2da98c8b9737}\label{namespaceinterface_a72ec0b767bae8bc1bf6b2da98c8b9737}} 
+\index{interface@{interface}!srv\+\_\+wall\+\_\+follow@{srv\+\_\+wall\+\_\+follow}}
+\index{srv\+\_\+wall\+\_\+follow@{srv\+\_\+wall\+\_\+follow}!interface@{interface}}
+\subsubsection{\texorpdfstring{srv\+\_\+wall\+\_\+follow}{srv\_wall\_follow}}
+{\footnotesize\ttfamily interface.\+srv\+\_\+wall\+\_\+follow = None}
+
+
+
+Definition at line 30 of file interface.\+py.
+

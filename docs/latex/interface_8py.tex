@@ -1,0 +1,41 @@
+\hypertarget{interface_8py}{}\section{my\+\_\+second\+\_\+assignment/scripts/interface.py File Reference}
+\label{interface_8py}\index{my\+\_\+second\+\_\+assignment/scripts/interface.\+py@{my\+\_\+second\+\_\+assignment/scripts/interface.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceinterface}{interface}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceinterface_a66f5ed4cd3345e5f1f4abe21259cf925}{interface.\+go\+\_\+to} (x, y)
+\begin{DoxyCompactList}\small\item\em This function publish the desired position to \textquotesingle{}move\+\_\+base/goal\textquotesingle{} topic. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a77f849df9c7df3c30a5f806d8ed5803f}{interface.\+random\+\_\+destination} ()
+\begin{DoxyCompactList}\small\item\em A random destination is chosen among the possible. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a1ba6fd083749b1aa01d230719ebffaf8}{interface.\+ask\+\_\+user\+\_\+destination} ()
+\begin{DoxyCompactList}\small\item\em This function ask to the user the destination among a list of possible targets. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_adb690fa0fc4d5c66808407e62379cfba}{interface.\+follow\+\_\+walls} ()
+\begin{DoxyCompactList}\small\item\em This function command the robot to follow the walls. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a106ba8bd4a2bb1c8c1b073afb74cdfdd}{interface.\+stop} ()
+\begin{DoxyCompactList}\small\item\em This function command the robot to stop First it publish a 2D Twist equal to zero Then it sets the actual position as the next target. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_a1b788c3588460b432a0ecf905def2092}{interface.\+position\+Callback} (msg)
+\begin{DoxyCompactList}\small\item\em Every time the \textquotesingle{}/odom\textquotesingle{} publish the position this function put them in global variables. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceinterface_ac84656acec70183a4ef276f4a3343971}{interface.\+main} ()
+\begin{DoxyCompactList}\small\item\em Let\textquotesingle{}s define the main function\+: initialization and infinite loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{namespaceinterface_a77dace02a869e1f2eab3089d30819e9e}{interface.\+possible\+\_\+positions} = \mbox{[}(-\/4,-\/3),(-\/4,2),(-\/4,7),(5,-\/7),(5,-\/3),(5,1)\mbox{]}
+\begin{DoxyCompactList}\small\item\em The aim of this script is to get user commands. \end{DoxyCompactList}\item 
+\hyperlink{namespaceinterface_a72ec0b767bae8bc1bf6b2da98c8b9737}{interface.\+srv\+\_\+wall\+\_\+follow} = None
+\item 
+\hyperlink{namespaceinterface_a295379ed3912c49d4fd9d286c7f0caee}{interface.\+pub\+\_\+move\+\_\+base} = None
+\item 
+\hyperlink{namespaceinterface_a955722b54659175cc5ea2543c976d6a4}{interface.\+pub\+\_\+twist} = None
+\item 
+\hyperlink{namespaceinterface_a2dc19bae4560767a9cff309d17ca0fc3}{interface.\+client} = None
+\item 
+\hyperlink{namespaceinterface_a4fa46e1dde3c61a732b5383c93e411e1}{interface.\+actual\+\_\+x} = None
+\item 
+\hyperlink{namespaceinterface_af27b0b163a429bf0725f6c471e3f1998}{interface.\+actual\+\_\+y} = None
+\end{DoxyCompactItemize}

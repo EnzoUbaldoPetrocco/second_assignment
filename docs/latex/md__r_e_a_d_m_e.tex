@@ -1,0 +1,103 @@
+\subsection*{Introduction}
+
+This project is a R\+OS package for controlling a robot in a simulation where the robot doesn\textquotesingle{}t know a priori the map. This project involves only the coding regarding to the user interface. The planning algorithm is dijkstra (move\+\_\+base) and gmapping for localizing.
+
+\subsection*{Computational graph}
+
+
+
+\subsection*{Installation}
+
+Before running this ros package some installation are needed. Before all install R\+OS and python.
+
+Then it must be installed with the command\+:
+
+
+\begin{DoxyCode}
+sudo apt-get install ros-<your\_ros\_distro>-navigation
+\end{DoxyCode}
+
+
+Then, move the terminal to your working space and then to src folder and proceed with the next steps\+:
+
+
+\begin{DoxyCode}
+git clone https://github.com/CarmineD8/robot\_description
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+git clone https://github.com/CarmineD8/slam\_gmapping
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+git clone https://github.com/CarmineD8/final\_assignment
+\end{DoxyCode}
+
+
+I\+M\+P\+O\+R\+T\+A\+NT\+: check your R\+OS version. With melodic ros versione you\textquotesingle{}ll need to switch branch to \textquotesingle{}noetic\textquotesingle{}; this can ben done through the next bash command, in E\+V\+E\+RY folders generated from the three previous clone commands\+:
+
+
+\begin{DoxyCode}
+git checkout noetic
+\end{DoxyCode}
+
+
+\subsection*{How to run it}
+
+Now, let\textquotesingle{}s follow these simple step which will let the user to launch the program\+:
+
+Open the first terminal
+
+
+\begin{DoxyCode}
+roscore &
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+catkin\_make
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+roslaunch final\_assignment simulation\_gmapping.launch
+\end{DoxyCode}
+
+
+Don\textquotesingle{}t close this terminal and open the second one
+
+
+\begin{DoxyCode}
+roslaunch my\_second\_assignment server.launch
+\end{DoxyCode}
+
+
+\subsection*{Behavior implemented}
+
+The robot spawn in a specific point of the map in Rviz and Gazebo simulations. Both have the same map, but in Gazebo we can see the entire map, because this is the simulation from the point of view of an external agent; while in Rviz we can see part of the map, since the scan reveals the map exploring the map.
+
+The robot moves around following the instruction given by the user, it can\+: -\/\+Go to a target selected randomly among a list of targets -\/\+Go to a target selected from the user among a list of targets -\/\+Follow the walls -\/\+Stop
+
+The list of possible target is\+: (-\/4,-\/3);(-\/4,2);(-\/4,7);(5,-\/7);(5,-\/3);(5,1)
+
+The behavior can be observed in Rviz or Gazebo environment.
+
+\subsection*{Architectural structure}
+
+This project involves the creation of two nodes within a package. The nodes are written in python and comunicate each other through \textquotesingle{}random\+Service.\+srv\textquotesingle{} message described in srv folder. \textquotesingle{}random\+Service.\+srv\textquotesingle{} response contains the two coordinates, selected
+
+Both nodes are contained inside scripts folder.
+\begin{DoxyItemize}
+\item \textquotesingle{}/interface\textquotesingle{} controls the robot behavior through a list of command given that the user has to select. It subscribes to \textquotesingle{}/odom\textquotesingle{} to get the actual position of the robot, ha a publisher to \textquotesingle{}/cmd\+\_\+vel\textquotesingle{} to publish stop the robot, subscribes to the service \textquotesingle{}/\+Server\textquotesingle{} to get the random target, a publisher to \textquotesingle{}move\+\_\+base/goal\textquotesingle{} to reach the position and it subscribes to \textquotesingle{}wall\+\_\+follower\+\_\+switch\textquotesingle{} service if it has to follow the walls. This node enters in an infinite loop (the node can go out only if the program is shutdown) when the user ask for a command, the program goes to a specific function.
+\item \textquotesingle{}/\+Server\textquotesingle{} receive the request for a new target and sends the random target among a list of given target. (More information in docs folder)
+\end{DoxyItemize}
+
+\subsection*{Considerations}
+
+First of all, the optional task of the assignment\+: \textquotesingle{}switch from bug0 to dijkstra and vice versa\textquotesingle{} is not implemented. Another limitation is that the algorithms are optimal for a \textquotesingle{}finite\textquotesingle{} map, in an open environment the target could have difficulties. The algorithm could detect that it is convenient to turn right, instead of turning left when on left there is a wall; in fact up to now the robot, even it has a wall on left i turn on left until it reaches a wall, then it goes back and then trying again to turn left. Another improvement should be creating a node for every command, such that every node can communicate through topic. It is preferrable, in case of improvements of a specific task or many of them, to divide into files rather then having a unique giant and complex file. 
