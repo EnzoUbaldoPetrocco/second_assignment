@@ -100,7 +100,12 @@ This node enters in an infinite loop (the node can go out only if the program is
 (More information in docs folder)
 
 
+## Considerations
 
+First of all, the optional task of the assignment: 'switch from bug0 to dijkstra and vice versa' is not implemented. 
+Another limitation is that the algorithms are optimal for a 'finite' map, in an open environment the target could have difficulties.
+The algorithm could detect that it is convenient to turn right, instead of turning left when on left there is a wall; in fact up to now the robot, even it has a wall on left i turn on left until it reaches a wall, then it goes back and then trying again to turn left.
+Another improvement should be creating a node for every command, such that every node can communicate through topic. It is preferrable, in case of improvements of a specific task or many of them, to divide into files rather then having a unique giant and complex file.
 
 
 
