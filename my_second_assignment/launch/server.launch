@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+ <arg name="des_x" default = "-5" />
+ <arg name= "des_y" default = "9" />
+ <arg name= "bug0" value="false"/>
+ <param name= "des_pos_x" value = "$(arg des_x)" />
+ <param name= "des_pos_y" value = "$(arg des_y)" />
+
+ <node pkg="final_assignment" type="go_to_point_service_m.py" name="go_to_point" />
+ 
+ <node pkg="final_assignment" type="wall_follow_service_m.py" name="wall_follower" />
+
+ <include file="$(find final_assignment)/launch/move_base.launch" />
+
+ <node name="server" pkg="my_second_assignment" type="server.py"  output= "screen"/>
+ <node name="interface" pkg="my_second_assignment" type="interface.py"  output= "screen"/>
+
+
+
+</launch>
