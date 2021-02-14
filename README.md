@@ -10,7 +10,7 @@ The planning algorithm is dijkstra (move_base) and gmapping for localizing.
 ## Computational graph
 
 
-
+![rosgrap_second_assignment](https://user-images.githubusercontent.com/48513075/107882604-8d7b4200-6eea-11eb-9e9d-c043f1c9a53d.png)
 
 
 
